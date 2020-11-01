@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import { Input, Button, Card } from "react-native-elements";
 import { FontAwesome, Feather, AntDesign } from "@expo/vector-icons";
 import { AuthContext } from "../providers/AuthProvider";
-import { getDataJSON } from "../functions/AsyncStorageFunctions";
+import { getDataJSON, clearAppData } from "../functions/AsyncStorageFunctions";
 
 const SignInScreen = (props) => {
   const [Email, setEmail] = useState("");
@@ -52,6 +52,7 @@ const SignInScreen = (props) => {
               icon={<AntDesign name="user" size={24} color="dodgerblue" />}
               title="  Don't have an account?"
               onPress={function () {
+                //clearAppData();
                 props.navigation.navigate("SignUp");
               }}
             />

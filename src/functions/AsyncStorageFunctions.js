@@ -1,4 +1,5 @@
 import { AsyncStorage } from "react-native";
+//import AsyncStorage from '@react-native-community/async-storage';
 
 const storeData = async (key, value) => {
   try {
@@ -54,4 +55,14 @@ const removeData = async (key) => {
   }
 };
 
-export { storeData, storeDataJSON, getData, getDataJSON, removeData };
+const clearAppData = async function() {
+  try {
+      const keys = await AsyncStorage.getAllKeys();
+      await AsyncStorage.multiRemove(keys);
+      alert('done');
+  } catch (error) {
+      console.error('Error clearing app data.');
+  }
+}
+
+export { storeData, storeDataJSON, getData, getDataJSON, removeData, clearAppData };

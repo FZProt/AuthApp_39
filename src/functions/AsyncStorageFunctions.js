@@ -55,14 +55,25 @@ const removeData = async (key) => {
   }
 };
 
-const clearAppData = async function() {
+const clearAppData = async function () {
   try {
-      const keys = await AsyncStorage.getAllKeys();
-      await AsyncStorage.multiRemove(keys);
-      alert('done');
+    const keys = await AsyncStorage.getAllKeys();
+    await AsyncStorage.multiRemove(keys);
+    alert('done');
   } catch (error) {
-      console.error('Error clearing app data.');
+    console.error('Error clearing app data.');
   }
 }
 
-export { storeData, storeDataJSON, getData, getDataJSON, removeData, clearAppData };
+const logCurrentStorage = async function () {
+  try {
+    const keys = await AsyncStorage.getAllKeys();
+    let data = await AsyncStorage.multiGet(keys);
+    console.log(data)
+    //alert('done');
+  } catch (error) {
+    console.error('Error showing data.');
+  }
+}
+
+export { storeData, storeDataJSON, getData, getDataJSON, removeData, clearAppData, logCurrentStorage };

@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import { Input, Button, Card } from "react-native-elements";
 import { FontAwesome, Feather, AntDesign } from "@expo/vector-icons";
 import { AuthContext } from "../providers/AuthProvider";
-import { getDataJSON, clearAppData } from "../functions/AsyncStorageFunctions";
+import { getDataJSON, clearAppData, logCurrentStorage } from "../functions/AsyncStorageFunctions";
 
 const SignInScreen = (props) => {
   const [Email, setEmail] = useState("");
@@ -53,6 +53,7 @@ const SignInScreen = (props) => {
               title="  Don't have an account?"
               onPress={function () {
                 //clearAppData();
+                logCurrentStorage();
                 props.navigation.navigate("SignUp");
               }}
             />

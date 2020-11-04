@@ -64,7 +64,7 @@ const PostScreen = (props) => {
                                     title={item.time}
                                     body={item.comment}
                                     props={props}
-                                //postAuthor={props.author}
+                                    post={post}
 
                                 />
                             );

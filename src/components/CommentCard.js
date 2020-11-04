@@ -9,7 +9,8 @@ import _ from "lodash";
 const CommentCard = (props) => {
 
   const deleteComment = async () => {
-    alert('Button Long Pressed');
+    removeData('comments'+props.post)    
+    alert('Comment deleted');
   };
 
   return (

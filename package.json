@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/datetimepicker": "^3.0.4",
     "@react-native-community/masked-view": "0.1.10",
     "@react-native-community/netinfo": "^5.9.7",
     "@react-navigation/drawer": "^5.9.3",
@@ -19,9 +20,11 @@
     "expo-status-bar": "~1.0.2",
     "lodash": "^4.17.20",
     "react": "16.13.1",
+    "react-datepicker": "^3.3.0",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.3.tar.gz",
     "react-native-calendar-datepicker": "^1.2.2",
+    "react-native-datepicker": "^1.7.2",
     "react-native-elements": "^2.3.2",
     "react-native-gesture-handler": "~1.7.0",
     "react-native-paper": "^4.2.0",

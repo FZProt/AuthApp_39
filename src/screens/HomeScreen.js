@@ -73,6 +73,13 @@ const HomeScreen = (props) => {
                 await storeDataJSON(post,0);
               }
               saveLikeData(myPost);
+
+              // let saveCommentData = async (post) =>{
+              //   await storeDataJSON(post+"comment",[]);
+              // }
+              // saveCommentData(myPost);
+
+
               let currentUserPost = {
                 email: auth.CurrentUser.email,
                 name: auth.CurrentUser.name,

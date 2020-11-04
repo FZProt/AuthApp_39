@@ -20,8 +20,8 @@ const HomeStack = createStackNavigator();
 const HomeStackScreen = () => {
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={HomeScreen} />
-      <HomeStack.Screen name="Post" component={PostScreen} />
+      <HomeStack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+      <HomeStack.Screen name="Post" component={PostScreen} options={{ headerShown: false }} />
     </HomeStack.Navigator>
   );
 };

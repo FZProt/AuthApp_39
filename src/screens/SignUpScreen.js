@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import { Input, Button, Card } from "react-native-elements";
 import { FontAwesome, Feather, AntDesign, Ionicons, Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
 import { storeDataJSON } from "../functions/AsyncStorageFunctions";
-import Calendar from 'react-native-calendar-datepicker';
+import DatePicker from 'react-native-datepicker';
 import Moment from 'moment';
 
 const SignUpScreen = (props) => {
@@ -42,21 +42,40 @@ const SignUpScreen = (props) => {
           }}
         />
 
-        <Input
+        {/* <Input
           leftIcon={<Entypo name="calendar" size={24} color="black" />}
           placeholder="Date of Birth"
           onChangeText={function (currentInput) {
             setDob(currentInput);
           }}
+        /> */}
+
+        <DatePicker
+          style={{ width: 200 }}
+          mode="date"
+          placeholder="Date of Birth"
+          date={Dob}
+          format="DD-MM-YYYY"
+          confirmBtnText="Confirm"
+          cancelBtnText="Cancel"
+          customStyles={{
+            dateIcon: {
+              position: 'absolute',
+              left: 7,
+              top: 4,
+              marginLeft: 0
+            },
+            dateInput: {
+              left: 7,
+              bottom: 7,
+              marginLeft: 36
+            }
+          }}
+          onDateChange={
+            setDob
+          }
         />
 
-        {/* <Calendar
-          onChange={(date) => this.setState({date})}
-          selected={this.state.date}
-          // We use Moment.js to give the minimum and maximum dates.
-          //minDate={Moment().startOf('day')}
-          maxDate={Moment().startOf('day')}
-        /> */}
 
         <Input
           leftIcon={<Entypo name="address" size={24} color="black" />}

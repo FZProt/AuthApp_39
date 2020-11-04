@@ -4,7 +4,7 @@ import { Card, Button, Text, Avatar } from "react-native-elements";
 import { AntDesign } from "@expo/vector-icons";
 import { getDataJSON, removeData, storeDataJSON } from "../functions/AsyncStorageFunctions";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import _ from "lodash";
+
 
 const PostCard = (props) => {
 
@@ -70,8 +70,13 @@ const PostCard = (props) => {
             updateLikeCount();            
           }}
         />
-        <Button type="solid" title="{comment}"
-        onPress={function(){props.props.navigation.navigate('Post')}} />
+        <Button type="solid" title="Comment"
+        onPress={function(){
+          let p = props.body;
+          let a = props.author;
+          //console.log(p,a);
+          props.props.navigation.navigate('Post',{p,a});
+          }} />
       </View>
     </Card>
     </TouchableOpacity>

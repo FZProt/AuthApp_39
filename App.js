@@ -11,9 +11,20 @@ import SignInScreen from "./src/screens/SignInScreen";
 
 import { AuthContext, AuthProvider } from "./src/providers/AuthProvider";
 import { Entypo, AntDesign, Ionicons } from "@expo/vector-icons";
+import PostScreen from "./src/screens/PostScreen";
 const AuthStack = createStackNavigator();
 const HomeTab = createMaterialBottomTabNavigator();
 const AppDrawer = createDrawerNavigator();
+const HomeStack = createStackNavigator();
+
+const HomeStackScreen = () => {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen name="Home" component={HomeScreen} />
+      <HomeStack.Screen name="Post" component={PostScreen} />
+    </HomeStack.Navigator>
+  );
+};
 
 const AppDrawerScreen = () => {
   return (
@@ -29,7 +40,7 @@ const HomeTabScreen = () => {
     <HomeTab.Navigator initialRouteName="Home">
       <HomeTab.Screen
         name="Home"
-        component={HomeScreen}
+        component={HomeStackScreen}
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ focused }) =>
